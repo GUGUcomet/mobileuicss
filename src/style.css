@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css?family=Manrope');/*! minireset.css v0.0.6 | MIT License | github.com/jgthms/minireset.css */
+blockquote, body, dd, dl, dt, fieldset, figure, h1, h2, h3, h4, h5, h6, hr, html, iframe, legend, li, ol, p, pre, textarea, ul { margin:0; padding:0 } 
+h1, h2, h3, h4, h5, h6 { font-size:100%; font-weight:400 } 
+ul { list-style:none } 
+button, input, select { margin:0 } 
+html { box-sizing:border-box; } 
+*, :after, :before { box-sizing:inherit } 
+img, video { height:auto; max-width:100% } 
+iframe { border:0 } 
+table { border-collapse:collapse; border-spacing:0 } 
+td, th { padding:0 } 
+
+
+
+
+:root { --subheader:1.5rem; /*24px*/
+ --text:1rem; /*16px*/
+ --smalltext:0.875rem; /*14px*/
+ --description:0.75rem; /*12px*/
+
+ --fill-primary:#303742; --surface:#f0f4fa; --white:#fff; --button-hover-bg-color:#222; --text-secondary:#818A99; --text-primary:#1C2129; } 
+
+
+.btn-wrap-full { display: flex; gap:0 8px; padding: 16px 12px; width:100%; } 
+.btn-wrap-full .btn { flex: 1 1 0; } 
+
+.btn { padding: 0 16px; font-size: var(--text); font-weight:400; display: flex; justify-content: center; gap:0 8px; align-items: center; font-weight: 400; width: auto; border: none; border-radius: 8px; cursor: pointer; transition: 0.5s; height:50px; background-color: var(--fill-primary); color: var(--white); font-family: Manrope;
+position: relative; } 
+
+.btn-content{}
+.btn-main-txt { font-weight: 600; font-size: var(--text); } 
+.btn-sub-txt { font-weight: 400; font-size: var(--smalltext); color:var(--text-secondary); } 
+
+
+/*버튼 효과*/
+/* .btn:active, .btn:hover, .btn:focus { background: var(---hover-bg-color); outline: 0; } 
+.btn:disabled { opacity: 0.5; }  */
+
+/*서브클래스*/
+.btn.secondary { background-color: var(--surface); color: var(--fill-primary); } 
+.btn.teritary { background-color: var(--white); color: var(--fill-primary);box-shadow: 0px 4px 16px rgba(51, 51, 51, 0.2);} 
+.btn.outline { background-color: var(--white); color: var(--fill-primary); border: 1px solid var(--fill-primary)} 
+
+.btn.medium { height:40px; border-radius: 6px;} 
+.btn.small { height:30px; border-radius: 4px;} 
+
+
+
+/*효과*/
+.btn-slide {
+  transition: 0.6s;
+}
+.btn-slide:hover {
+  background: transparent;
+  box-shadow: inset 100vw 0 0 0 var(--fill-primary);
+  color:var(--white);
+}
+
+
+.btn-marquee {
+  font-weight: 600;
+  border: none;
+  overflow: hidden;
+  transition: 0.3s;
+}
+.btn-marquee:hover {
+  transform: scale(1.1);
+}
+.btn-marquee span.btn-main-txt {
+  display: block;
+  padding: 0 30px; /*패딩값으로 버튼 크기를 조절*/
+  -webkit-animation: move-left 2s linear infinite;
+          animation: move-left 2s linear infinite;
+}
+.btn-marquee span.btn-main-txt::after {
+  position: absolute;
+  content: attr(data-text);
+  top: 0;
+  right: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+@keyframes move-left {
+  to {
+    transform: translateX(100%);
+  }
+}
+/*효과*/
+
+.btn-offset {
+  border-radius: 0px;
+  box-shadow: 6px 6px 0 0 var(--fill-primary), inset 6px 6px 0 0 var(--fill-primary);
+  transition: 0.3s;
+}
+.btn-offset:hover {
+  background: transparent;
+  box-shadow: 0 0 0 0 var(--fill-primary), inset 108px 72px 0 0 var(--fill-primary);
+  color:var(--white);
+}
+
+/*gap 후처리*/
+@supports(gap:0){
+ .btn-wrap-full>* { margin-right:8px; } 
+ .btn-wrap-full:last-child { margin-right:0; } 
+}
+
+
+/*svg 아이콘 - 동일 색상 사용하는 경우*/
+.svg-icons.attach { content:url("/src/img/ico/24/Attach.svg"); display: block; width: 24px; height: 24px; } 
+
+
+
+
+
+
+/*sm*/
+@media (min-width: 640px) {  }
+
+/*md*/
+@media (min-width: 768px) {  }
+
+/*lg*/
+@media (min-width: 1024px) {  }
+
+ /*xl*/
+@media (min-width: 1280px) {  }
+
+/*2xl*/
+@media (min-width: 1536px) {  }
